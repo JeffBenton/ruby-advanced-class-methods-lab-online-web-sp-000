@@ -28,4 +28,8 @@ class Song
   def save
     self.class.all << self
   end
+  
+  def self.find_by_name(name)
+    self.all.include?(|song| song.name = name)
+  end
 end
