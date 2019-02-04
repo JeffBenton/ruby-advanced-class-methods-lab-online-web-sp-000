@@ -21,7 +21,11 @@ class Song
   end
 
   def self.new_from_filename(filename)
-    
+    song = self.new
+    arr = filename.split(" - ")
+    song.artist_name = arr[0]
+    song.name = arr[1].chomp(".mp3")
+    song
   end
 
   def self.find_or_create_by_name(name)
